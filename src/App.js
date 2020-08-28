@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Routes from './Routes';
 
 function App() {
+  const [auth, setAuth] = useState(false);
+  const client_id = process.env.CLIENT_ID;
+  const scopes = 'user-read-private user-read-email';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {Routes}
     </div>
   );
 }
