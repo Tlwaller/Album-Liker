@@ -1,5 +1,6 @@
 import React from "react";
 import { record, heart, spotificon } from '../images/index';
+import Axios from "axios";
 
 export default function Guestlanding() {
     return (
