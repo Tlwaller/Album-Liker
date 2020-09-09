@@ -24,7 +24,9 @@
             color: whitesmoke;
             background-color: #272727;
             transition: background-color, .3s;
-        }:hover {
+        }
+        
+        .gl-btn:hover {
             cursor: pointer;
             transition: background-color, .3s;
             background-color: #444444;

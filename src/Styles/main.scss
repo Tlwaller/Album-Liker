@@ -1,5 +1,9 @@
 @import './GuestLanding';
 
+html,
 body {
     background-color: #1DD15C;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }

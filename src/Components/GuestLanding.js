@@ -1,8 +1,7 @@
 import React from "react";
 import { record, heart, spotificon } from '../images/index';
-import Axios from "axios";
 
-export default function Guestlanding() {
+export default function Guestlanding(props) {
     return (
         <div className='guest-landing'>
             <h1>Album Liker</h1>
@@ -11,7 +10,9 @@ export default function Guestlanding() {
                 <img src={ heart } alt='heart' height='155px'/>
             </div>
             <h2>Add all songs from your liked albums to your liked songs!</h2>
-            <button className='gl-btn'><img src={ spotificon } alt='spotify' height='60%'/>Let's go!</button>
+            <a href='http://localhost:8888/login'>
+                <button className='gl-btn'><img src={ spotificon } alt='spotify' height='60%'/>Let's go!</button>
+            </a>
         </div>
     )
 }
