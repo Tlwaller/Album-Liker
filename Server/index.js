@@ -36,7 +36,7 @@ app.get('/callback', (req, res) => {
     }
     request.post(authOptions, (error, response, body) => {
         var access_token = body.access_token;
-        let uri = 'http://localhost:3000/home';
+        let uri = 'http://localhost:3000/auth';
         res.redirect(uri + '?access_token=' + access_token);
     })
 })
