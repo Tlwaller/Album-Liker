@@ -6,7 +6,7 @@ import { record } from '../images/index';
 export default function Loading(props) {
     return (
         <div id="loading-screen">
-            <img src={ record } className="loading-record"/>
+            <img src={ record } alt="loading-record" className="loading-record"/>
             <Redirect
                 to={{
                 pathname: "/home",
