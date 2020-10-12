@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 export default function Home(props) {
-    const token = useState(props.location.state.token);
     const [user, setUser] = useState({});
-
+    
     useEffect(() => {
+        const token = props.location.state.token;
         fetch("https://api.spotify.com/v1/me", {
             headers: { "Authorization": "Bearer " + token }
         })
@@ -24,7 +24,7 @@ export default function Home(props) {
             type: data.type,
             uri: data.uri
             })})
-    },[]);
+    },[props]);
 
     return (
         <div>
