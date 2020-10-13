@@ -4,33 +4,57 @@
     width: 80vw;
     overflow-y: auto;
 
-    dl {
+    desc {
+        position: fixed;
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
-        padding-left: 5em;
-        padding-right: 5em;
-        font-size: 15pt;
-
-        .dt-artist{padding-left: 30%;}
+        width: 79vw;
+        height: 3em;
+        margin: 0;
+        border-bottom: 1px solid #333333;
+        background-color: #444444;
+        .desc-date {margin-right: 1em;}
+        .desc-title {text-align: start; margin-left: 5.5%;}
+        .desc-artist, .desc-title {width: 43%;}
+        .desc-title, .desc-artist, .desc-date {font-weight: normal;}
     }
+
+    #album-0{padding-top: 3em;}
     
     .album-link-wrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         border-bottom: 1px solid #333333;
         color: whitesmoke;
         text-decoration: none;
         transition: background-color .3s, color .3s;
-        .album-cover {padding: .5em;}
-        .album-title {font-weight: normal;}
+        .album-cover {
+            padding: .5em;
+            width: 4%;
+        }
+        .album-title {text-align: start;}
+        .album-date {
+            margin-right: 1em;
+            // width: 7.5%;
+            // position: relative;
+            // right: 1em;
+        }
+        .album-artist, .album-title {width: 43%;}
+        .album-title, .album-artist, .album-date {font-weight: normal;}
     }
 
-    :hover {
+    :not(desc):not(.desc):hover {
         cursor: pointer;
         background-color: #444444;
         color: #1DD15C;
         transition: background-color .3s, color .3s;
     }
+}
+
+@media(min-width: 3400px) {
+    .album-title, .album-artist, .album-date {font-size: 30pt;}
 }
