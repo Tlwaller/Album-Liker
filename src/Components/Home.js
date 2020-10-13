@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import AlbumList from './AlbumList';
+import { record } from '../images/index';
 
 export default function Home(props) {
     const [user, setUser] = useState({});
+    const [albums, setAlbums] = useState();
     
     useEffect(() => {
         const token = props.location.state.token;
@@ -23,12 +26,23 @@ export default function Home(props) {
             product: data.product,
             type: data.type,
             uri: data.uri
-            })})
-    },[props]);
+            })});
 
-    return (
-        <div>
+            fetch("https://api.spotify.com/v1/me/albums?offset=0&limit=50", {
+            headers: { "Authorization": "Bearer " + token }
+            })
+            .then(res => res.json())
+            .then(data => {
+                setAlbums(data.items)
+            });
+    },[props]);
+    
+    return(!albums
+        ? <img src={ record } alt="loading-record" className="loading-record"/>
+        :
+        (<div id="home-container">
             <h1>Welcome, {user.name}</h1>
-        </div>
+            <AlbumList albums={albums}/>
+        </div>)
     )
 }
