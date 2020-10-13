@@ -1,0 +1,36 @@
+#album-list-container {
+    background-color: #444444f5;
+    height: 80vh;
+    width: 80vw;
+    overflow-y: auto;
+
+    dl {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 5em;
+        padding-right: 5em;
+        font-size: 15pt;
+
+        .dt-artist{padding-left: 30%;}
+    }
+    
+    .album-link-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid #333333;
+        color: whitesmoke;
+        text-decoration: none;
+        transition: background-color .3s, color .3s;
+        .album-cover {padding: .5em;}
+        .album-title {font-weight: normal;}
+    }
+
+    :hover {
+        cursor: pointer;
+        background-color: #444444;
+        color: #1DD15C;
+        transition: background-color .3s, color .3s;
+    }
+}

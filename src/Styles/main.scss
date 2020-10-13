@@ -1,9 +1,14 @@
+@import './AlbumList';
 @import './GuestLanding';
+@import './Home';
 @import './Loading';
+@import './reset.css';
 
 html,
 body {
+    color: whitesmoke;
     background-color: #1DD15C;
+    background: linear-gradient(70deg, #1DD15C 50%, #333333 50%);
     height: 100%;
     width: 100%;
     overflow: auto;
