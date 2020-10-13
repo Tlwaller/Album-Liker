@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Albumlist(props) {
-    const [albums, setAlbums] = useState(props.albums);
+    const albums = props.albums;
 
     return (
         <ol id="album-list-container">
-            <desc>
-                {/* <div className="album-desc-space"></div> */}
+            <div className="column-desc">
                 <h2 className="desc desc-title">Album</h2>
                 <h2 className="desc desc-artist">Artist</h2>
                 <h2 className="desc desc-date">Date Liked</h2>
-            </desc>
+            </div>
+            
             {
                 albums.map((e, i) => {
                     const dateAdded = new Date(e.added_at)
@@ -27,6 +27,7 @@ export default function Albumlist(props) {
                     )
                 })
             }
+            
         </ol>
     )
 }

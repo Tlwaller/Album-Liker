@@ -4,7 +4,7 @@
     width: 80vw;
     overflow-y: auto;
 
-    desc {
+    .column-desc {
         position: fixed;
         display: flex;
         flex-direction: row;
@@ -21,7 +21,7 @@
         .desc-title, .desc-artist, .desc-date {font-weight: normal;}
     }
 
-    #album-0{padding-top: 3em;}
+    #album-0 {padding-top: 3em;}
     
     .album-link-wrapper {
         display: flex;
