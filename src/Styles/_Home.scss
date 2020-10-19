@@ -4,4 +4,17 @@
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
+
+    .al-nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 3.5em;
+        width: 80vw;
+
+        .al-nav-btn {
+            height: 3.5em;
+            color: white;
+        }
+    }
 }

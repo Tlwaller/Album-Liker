@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import AlbumList from './AlbumList';
 import { record } from '../images/index';
+import { Button } from '@material-ui/core';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 
 export default function Home(props) {
     const [user, setUser] = useState({});
@@ -76,9 +78,19 @@ export default function Home(props) {
             <h1>Welcome, {user.name}</h1>
             <AlbumList albums={albums}/>
             <nav className="al-nav">
-                <button className="al-nav-btn" onClick={() => handleNav(paging.prev)}>Previous</button>
+                <Button className={(paging.current === 1) ? "" : "al-nav-btn"} color={(paging.current === 1) ? "secondary" : "primary"} size="small" onClick={() => handleNav(paging.prev)} disabled={(paging.current === 1) ? true : false}>
+                    <KeyboardArrowLeft />
+                    <h1>Back</h1>
+                </Button>
                 <h1>{paging.current} / {Math.ceil(paging.total / paging.limit)}</h1>
-                <button className="al-nav-btn" onClick={() => handleNav(paging.next)}>Next</button>
+                <Button
+                className={(paging.current === (Math.ceil(paging.total / paging.limit))) ? "" : "al-nav-btn"}
+                color={(paging.current === (Math.ceil(paging.total / paging.limit))) ? "secondary" : "primary"}
+                size="small" onClick={() => handleNav(paging.next)}
+                disabled={(paging.current === (Math.ceil(paging.total / paging.limit))) ? true : false}>
+                    <h1>Next</h1>
+                    <KeyboardArrowRight />
+                </Button>
             </nav>
         </div>)
     )
