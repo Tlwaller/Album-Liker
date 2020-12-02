@@ -47,7 +47,7 @@
         .album-title, .album-artist, .album-date {font-weight: normal;}
     }
 
-    :not(desc):not(.desc):hover {
+    :not(.column-desc):not(.desc):hover {
         cursor: pointer;
         background-color: #444444;
         color: #1DD15C;

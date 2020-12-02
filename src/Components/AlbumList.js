@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 export default function Albumlist(props) {
     const albums = props.albums;
+    const checkTracks = props.checkTracks;
 
     return (
         <ol id="album-list-container">
             <div className="column-desc">
-                <h2 className="desc desc-title">Album</h2>
+                <h2 className="desc desc-title">Album. {checkTracks}</h2>
                 <h2 className="desc desc-artist">Artist</h2>
                 <h2 className="desc desc-date">Date Liked</h2>
             </div>
